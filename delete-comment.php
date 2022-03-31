@@ -26,14 +26,15 @@ $id = $_GET['id'];
  * 
  * PS : Vous remarquez que ce sont les mêmes lignes que pour l'index.php ?!
  */
-$pdo = getPdo();
+//$pdo = getPdo(); On an deja sur fonction findComment()
 
 /**
  * 3. Vérification de l'existence du commentaire
  */
-$query = $pdo->prepare('SELECT * FROM comments WHERE id = :id');
-$query->execute(['id' => $id]);
-if ($query->rowCount() === 0) {
+// $query = $pdo->prepare('SELECT * FROM comments WHERE id = :id');
+// $query->execute(['id' => $id]);
+$commentaire = finComment($id);
+if (!$commentaire) {   //$query->rowCount() === 0 par !$commentaire
     die("Aucun commentaire n'a l'identifiant $id !");
 }
 
@@ -42,11 +43,13 @@ if ($query->rowCount() === 0) {
  * On récupère l'identifiant de l'article avant de supprimer le commentaire
  */
 
-$commentaire = $query->fetch();
+// $commentaire = $query->fetch(); en commentaire parceque en a deja sur function findComment()
 $article_id = $commentaire['article_id'];
 
-$query = $pdo->prepare('DELETE FROM comments WHERE id = :id');
-$query->execute(['id' => $id]);
+// $query = $pdo->prepare('DELETE FROM comments WHERE id = :id');
+// $query->execute(['id' => $id]);  on remplace tous ca par deletComment($id);
+
+deletComment($id);
 
 /**
  * 5. Redirection vers l'article en question
