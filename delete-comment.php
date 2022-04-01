@@ -8,6 +8,9 @@
  */
 require_once('liberaries/database.php');
 require_once('liberaries/utils.php');
+require_once('liberaries/models/Comment.php');
+
+$model = new Comment();
 /**
  * 1. Récupération du paramètre "id" en GET
  */
@@ -33,7 +36,7 @@ $id = $_GET['id'];
  */
 // $query = $pdo->prepare('SELECT * FROM comments WHERE id = :id');
 // $query->execute(['id' => $id]);
-$commentaire = finComment($id);
+$commentaire = $model->find($id);
 if (!$commentaire) {   //$query->rowCount() === 0 par !$commentaire
     die("Aucun commentaire n'a l'identifiant $id !");
 }
@@ -49,7 +52,7 @@ $article_id = $commentaire['article_id'];
 // $query = $pdo->prepare('DELETE FROM comments WHERE id = :id');
 // $query->execute(['id' => $id]);  on remplace tous ca par deletComment($id);
 
-deletComment($id);
+$model->delete($id);
 
 /**
  * 5. Redirection vers l'article en question
