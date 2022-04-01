@@ -15,6 +15,11 @@
  */
 require_once('liberaries/database.php');
 require_once('liberaries/utils.php');
+require_once('liberaries/models/Article.php');
+require_once('liberaries/models/Comment.php');
+
+$modelArticle = new Article();
+$modelComment = new Comment();
 /**
  * 1. On vérifie que les données ont bien été envoyées en POST
  * D'abord, on récupère les informations à partir du POST
@@ -60,7 +65,7 @@ if (!$author || !$article_id || !$content) {
 
 // $query = $pdo->prepare('SELECT * FROM articles WHERE id = :article_id');
 // $query->execute(['article_id' => $article_id]);
-$article = findArticle($article_id);
+$article = $modelArticle->find($article_id);
 
 // Si rien n'est revenu, on fait une erreur
 if (!$article) {
@@ -70,7 +75,7 @@ if (!$article) {
 // 3. Insertion du commentaire
 // $query = $pdo->prepare('INSERT INTO comments SET author = :author, content = :content, article_id = :article_id, created_at = NOW()');
 // $query->execute(compact('author', 'content', 'article_id'));
-insertComment($author , $content, $article_id);
+$modelComment->insert($author , $content, $article_id);
 
 // 4. Redirection vers l'article en question :
 // header('Location: article.php?id=' . $article_id);
