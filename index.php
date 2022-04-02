@@ -23,7 +23,7 @@ $model = new Article();
 // On utilisera ici la méthode query (pas besoin de préparation car aucune variable n'entre en jeu)
 //$resultats = $pdo->query('SELECT * FROM articles ORDER BY created_at DESC');
 // On fouille le résultat pour en extraire les données réelles
-$articles = $model->findAll();  // cet fonction est crée sur database.php qui contient des requites sql
+$articles = $model->findAll("created_at DESC");  // cet fonction est crée sur database.php qui contient des requites sql
 
 /**
  * 3. Affichage

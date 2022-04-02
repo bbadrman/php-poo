@@ -2,7 +2,7 @@
 require_once('liberaries/models/Model.php');
 
 class Comment extends Model {
-    
+    protected $table = 'comments';
     /**
      * return la liste des commentaires d'un article donnée
      * 
@@ -22,27 +22,9 @@ class Comment extends Model {
     }
 
 
-    public function find(int $id)
-    {
+  
 
-        $query = $this->pdo->prepare('SELECT * FROM comments WHERE id = :id');
-        $query->execute(['id' => $id]);
-        $comment = $query->fetch();
-        return $comment;
-    }
 
-    /**
-     * suprimer un commentaire grace a son identifiant 
-     * 
-     * @param integer $id
-     * @return  void
-     */     
-    public function delete(int $id): void
-    {
-       
-        $query = $this->pdo->prepare('DELETE FROM comments WHERE id = :id');
-        $query->execute(['id' => $id]);
-    }
     /**
      * insere un commentaire dans la liste de la base
      * 
