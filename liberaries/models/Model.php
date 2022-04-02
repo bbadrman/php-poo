@@ -1,5 +1,7 @@
 <?php
 
+namespace Models;
+
 require_once('liberaries/database.php');
 
 class Model {

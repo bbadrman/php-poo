@@ -1,4 +1,7 @@
 <?php
+
+namespace Models;
+
 require_once('liberaries/models/Model.php');
 
 class Comment extends Model {
@@ -9,7 +12,7 @@ class Comment extends Model {
      * @param integer $article_id
      * @return  array
      */
-
+  
     public function findAllWithArticle(int $article_id): array
     {
 
