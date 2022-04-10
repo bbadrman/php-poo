@@ -14,7 +14,7 @@ require_once('liberaries/autoload.php');
 
 // require_once('liberaries/controllers/Article.php');
 
- $controller = new \controllers\Article();
- $controller->index();
+//  $controller = new \controllers\Article();
+//  $controller->index();
 
-// \Application::process();
+\Application::process();
