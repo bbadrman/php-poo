@@ -1,15 +1,15 @@
 <?php
 
-namespace Controllers;
+namespace controllers;
 
 require_once('liberaries/utils.php');
-require_once('liberaries/controllers/Controller.php');
-require_once('liberaries/models/Article.php');
-require_once('liberaries/models/Comment.php');
+// require_once('liberaries/controllers/Controller.php');
+// require_once('liberaries/models/Article.php');
+// require_once('liberaries/models/Comment.php'); 
 
 class Comment extends Controller
 {
-    protected  $modelName = \Models\Comment::class;
+    protected  $modelName = \models\Comment::class;
 
 
     public function insert(){

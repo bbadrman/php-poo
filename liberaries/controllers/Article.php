@@ -1,20 +1,18 @@
 <?php
 
-namespace Controllers;
+namespace controllers;
 
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
 
 require_once('liberaries/utils.php');
-require_once('liberaries/controllers/Controller.php');
-require_once('liberaries/models/Article.php');
-require_once('liberaries/models/Comment.php');
-    
+// require_once('liberaries/controllers/Controller.php');
+// require_once('liberaries/models/Article.php');
+// require_once('liberaries/models/Comment.php'); 
+
+
 class Article  extends Controller
 {
  
-   protected $modelName = \Models\Article::class;
+   protected $modelName = \models\Article::class;
 
     public function index()
     {
@@ -30,7 +28,7 @@ class Article  extends Controller
     public function show(){
       
 
-        $commentModel = new \Models\Comment();
+        $commentModel = new \models\Comment();
 
         /**
          * 1. Récupération du param "id" et vérification de celui-ci

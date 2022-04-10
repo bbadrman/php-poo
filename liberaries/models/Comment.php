@@ -1,6 +1,6 @@
 <?php
 
-namespace Models;
+namespace models;
 
 require_once('liberaries/models/Model.php');
 
@@ -25,7 +25,6 @@ class Comment extends Model {
     }
 
 
-  
 
 
     /**

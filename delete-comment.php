@@ -7,7 +7,8 @@
  * Puis on le supprimera !
  */
 
-require_once('liberaries/controllers/Comment.php');
+require_once('liberaries/autoload.php');
+// require_once('liberaries/controllers/Comment.php'); 
 
-$controller = new \Controllers\Comment();
+$controller = new \controllers\Comment();
 $controller->delete();
