@@ -36,3 +36,6 @@ In docker >> docker-compose.yml find replace test by project name and change all
 ## Main Tasks
 
 To do ...
+
+
+## Autoloading : c'est le responsable de charger les class automatique alor autrmodit c'est enpeche pas d'utilise require_once ou use dans le fichier 
