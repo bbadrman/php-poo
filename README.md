@@ -39,3 +39,11 @@ To do ...
 
 
 ## Autoloading : c'est le responsable de charger les class automatique alor autrmodit c'est enpeche pas d'utilise require_once ou use dans le fichier 
+
+## class application : 
+avoire une class qui contient du controllerName et task pour avoire :
+au lieu en url de http://localhost:81/index.php
+en passe su http://localhost:81/index.php?controller=article&task=show&id=127
+
+## patern singleton
+  en a donne une istance sur class database en remplace $pdo par self::$instance 
