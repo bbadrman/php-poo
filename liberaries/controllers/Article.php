@@ -3,7 +3,7 @@
 namespace controllers;
 
 
-require_once('liberaries/utils.php');
+// require_once('liberaries/utils.php');
 // require_once('liberaries/controllers/Controller.php');
 // require_once('liberaries/models/Article.php');
 // require_once('liberaries/models/Comment.php'); 
@@ -21,7 +21,7 @@ class Article  extends Controller
 
     $pageTitle = "Accueil";
 
-    render('articles/index', compact('pageTitle', 'articles')); 
+    \Renderer::render('articles/index', compact('pageTitle', 'articles')); 
 
     }
 
@@ -54,7 +54,7 @@ class Article  extends Controller
 
         $pageTitle = $article['title'];
 
-        render('articles/show', compact('pageTitle', 'article', 'commentaires', 'article_id')); // fonction compact qui cree une table asociative qui remplace la fanction au decis
+        \Renderer::render('articles/show', compact('pageTitle', 'article', 'commentaires', 'article_id')); // fonction compact qui cree une table asociative qui remplace la fanction au decis
 
 
     }
@@ -84,7 +84,7 @@ class Article  extends Controller
         header("Location: index.php");
         exit();
 
-        redirect("index.php");
+        \Http::redirect("index.php");
 
     }
 }

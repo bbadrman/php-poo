@@ -2,7 +2,7 @@
 
 namespace controllers;
 
-require_once('liberaries/utils.php');
+// require_once('liberaries/utils.php');
 // require_once('liberaries/controllers/Controller.php');
 // require_once('liberaries/models/Article.php');
 // require_once('liberaries/models/Comment.php'); 
@@ -76,7 +76,7 @@ class Comment extends Controller
         // header('Location: article.php?id=' . $article_id);
         // exit();
 
-        redirect("article.php?id="  . $article_id);
+        \Http::redirect("article.php?id="  . $article_id);
 
     }
 
@@ -132,7 +132,7 @@ class Comment extends Controller
         // header("Location: article.php?id=" . $article_id);
         // exit();
 
-        redirect("article.php?id="  . $article_id);
+        \Http::redirect("article.php?id="  . $article_id);
 
     }
 }
