@@ -1,6 +1,6 @@
 <?php
 
-namespace Models;
+namespace models;
 
 require_once('liberaries/database.php');
 

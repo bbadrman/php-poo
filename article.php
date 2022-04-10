@@ -11,7 +11,8 @@
  * On va ensuite afficher l'article puis ses commentaires
  */
 
-require_once('liberaries/controllers/Article.php');
+require_once('liberaries/autoload.php');
+// require_once('liberaries/controllers/Article.php');
 
-$controller = new \Controllers\Article();
+$controller = new \controllers\Article();
 $controller->show();

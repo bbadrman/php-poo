@@ -10,7 +10,11 @@ error_reporting(E_ALL);
  * puis on va boucler dessus pour afficher chacun d'entre eux
  */
 
- require_once('liberaries/controllers/Article.php');
+require_once('liberaries/autoload.php');
 
- $controller = new \Controllers\Article();
+// require_once('liberaries/controllers/Article.php');
+
+ $controller = new \controllers\Article();
  $controller->index();
+
+// \Application::process();
