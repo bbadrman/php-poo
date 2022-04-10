@@ -2,7 +2,7 @@
 
 namespace models;
 
-require_once('liberaries/database.php');
+// require_once('liberaries/database.php');
 
 class Model {
     
@@ -11,7 +11,7 @@ class Model {
 
     public function __construct()
     {
-        $this->pdo = getPdo();
+        $this->pdo = \Database::getPdo();
     }
 
     /**
